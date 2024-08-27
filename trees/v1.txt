@@ -1,0 +1,30 @@
+app/
+├── routes/
+│   ├── __auth/
+│   │   ├── login.tsx
+│   │   ├── logout.tsx
+│   │   └── signup.tsx
+│   ├── __public/
+│   │   ├── about-us.tsx
+│   │   ├── contact.tsx
+│   │   └── index.tsx
+│   ├── dashboard/
+│   │   ├── calendar/
+│   │   │   ├── $day.tsx
+│   │   │   └── index.tsx
+│   │   ├── projects/
+│   │   │   ├── $projectId/
+│   │   │   │   ├── collaborators.tsx
+│   │   │   │   ├── edit.tsx
+│   │   │   │   ├── index.tsx
+│   │   │   │   ├── settings.tsx
+│   │   │   │   └── tasks.$taskId.tsx
+│   │   │   ├── $projectId.tsx
+│   │   │   └── new.tsx
+│   │   ├── calendar.tsx
+│   │   ├── index.tsx
+│   │   └── projects.tsx
+│   ├── __auth.tsx
+│   ├── __public.tsx
+│   └── dashboard.projects.$projectId.print.tsx
+└── root.tsx

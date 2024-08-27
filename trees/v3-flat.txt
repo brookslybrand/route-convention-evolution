@@ -1,0 +1,28 @@
+app
+├── app.css
+├── data.ts
+├── layouts
+│   ├── auth.tsx
+│   ├── calendar.tsx
+│   ├── project-details.tsx
+│   ├── projects.tsx
+│   └── public.tsx
+├── routes
+│   ├── about-us.tsx
+│   ├── calendar-day.tsx
+│   ├── calendar.tsx
+│   ├── contact.tsx
+│   ├── dashboard-home.tsx
+│   ├── home.tsx
+│   ├── login.tsx
+│   ├── logout.tsx
+│   ├── project-collaborators.tsx
+│   ├── project-details.tsx
+│   ├── project-edit.tsx
+│   ├── project-new.tsx
+│   ├── project-print.tsx
+│   ├── project-settings.tsx
+│   ├── project-task.tsx
+│   └── signup.tsx
+├── root.tsx
+└── routes.ts
