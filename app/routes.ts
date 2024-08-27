@@ -1,14 +1,7 @@
-import type { RoutesConfig } from "@react-router/dev/routes";
+import type { RouteConfig } from "@react-router/dev/routes";
 import { route, layout, index } from "@react-router/dev/routes";
 
-// export const routes: RoutesConfig = [
-//   index("routes/home.tsx"),
-//   route("/contacts/:contactId", "routes/contacts/details.tsx"),
-//   route("/contacts/:contactId/edit", "routes/contacts/edit.tsx"),
-//   route("/contacts/:contactId/destroy", "routes/contacts/destroy.tsx"),
-// ];
-
-export const routes: RoutesConfig = [
+export const routes: RouteConfig = [
   layout("layouts/auth.tsx", [
     route("/login", "routes/login.tsx"),
     route("/logout", "routes/logout.tsx"),

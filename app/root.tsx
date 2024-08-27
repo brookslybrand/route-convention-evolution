@@ -10,12 +10,12 @@ import {
 import "./tailwind.css";
 
 const urls = [
-  { path: "/login", label: "Login" },
-  { path: "/logout", label: "Logout" },
-  { path: "/signup", label: "Signup" },
   { path: "/", label: "Home" },
   { path: "/about-us", label: "About Us" },
   { path: "/contact", label: "Contact" },
+  { path: "/login", label: "Login" },
+  { path: "/logout", label: "Logout" },
+  { path: "/signup", label: "Signup" },
   { path: "/dashboard", label: "Dashboard" },
   { path: "/dashboard/calendar", label: "Calendar" },
   { path: "/dashboard/calendar/1", label: "Calendar Day 1" },
@@ -41,7 +41,7 @@ export default function App() {
         <Links />
       </head>
       <body className="flex gap-8">
-        <div className="w-64 h-full bg-gray-800 text-white p-5">
+        <div className="w-64 h-full bg-gray-800 text-white p-5 min-h-screen">
           <h4 className="text-lg font-bold mb-4">Navigation</h4>
           <ul className="space-y-2">
             {urls.map((link) => (
@@ -53,7 +53,7 @@ export default function App() {
             ))}
           </ul>
         </div>
-        <div>
+        <div className="p-4 space-y-4">
           <Outlet />
         </div>
         <ScrollRestoration />
