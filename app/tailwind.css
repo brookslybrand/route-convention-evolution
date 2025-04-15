@@ -1,17 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  h1 {
-    @apply text-4xl font-bold;
-  }
+@custom-variant dark (&:where(.dark, .dark *));
 
-  h2 {
-    @apply text-3xl font-bold;
-  }
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
 
-  h3 {
-    @apply text-2xl font-bold;
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
   }
 }

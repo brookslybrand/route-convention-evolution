@@ -9,6 +9,8 @@ import {
 
 import "./tailwind.css";
 
+import type { Route } from "./+types/root";
+
 const urls = [
   { path: "/", label: "Home" },
   { path: "/about-us", label: "About Us" },
@@ -29,6 +31,19 @@ const urls = [
   { path: "/dashboard/projects/1/tasks/1", label: "Project 1 Task 1" },
   { path: "/dashboard/projects/new", label: "New Project" },
   { path: "/dashboard/projects/1/print", label: "Print Project 1" },
+];
+
+export let links: Route.LinksFunction = () => [
+  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  {
+    rel: "preconnect",
+    href: "https://fonts.gstatic.com",
+    crossOrigin: "anonymous",
+  },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+  },
 ];
 
 export default function App() {
