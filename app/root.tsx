@@ -5,33 +5,12 @@ import {
   ScrollRestoration,
   Outlet,
   Link,
+  href,
 } from "react-router";
 
 import "./tailwind.css";
 
 import type { Route } from "./+types/root";
-
-const urls = [
-  { path: "/", label: "Home" },
-  { path: "/about-us", label: "About Us" },
-  { path: "/contact", label: "Contact" },
-  { path: "/login", label: "Login" },
-  { path: "/logout", label: "Logout" },
-  { path: "/signup", label: "Signup" },
-  { path: "/dashboard", label: "Dashboard" },
-  { path: "/dashboard/calendar", label: "Calendar" },
-  { path: "/dashboard/calendar/1", label: "Calendar Day 1" },
-  { path: "/dashboard/projects/1", label: "Project 1" },
-  {
-    path: "/dashboard/projects/1/collaborators",
-    label: "Project 1 Collaborators",
-  },
-  { path: "/dashboard/projects/1/edit", label: "Edit Project 1" },
-  { path: "/dashboard/projects/1/settings", label: "Project 1 Settings" },
-  { path: "/dashboard/projects/1/tasks/1", label: "Project 1 Task 1" },
-  { path: "/dashboard/projects/new", label: "New Project" },
-  { path: "/dashboard/projects/1/print", label: "Print Project 1" },
-];
 
 export let links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -43,6 +22,51 @@ export let links: Route.LinksFunction = () => [
   {
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+  },
+];
+
+const urls = [
+  { path: href("/"), label: "Home" },
+  { path: href("/about-us"), label: "About Us" },
+  { path: href("/contact"), label: "Contact" },
+  { path: href("/login"), label: "Login" },
+  { path: href("/logout"), label: "Logout" },
+  { path: href("/signup"), label: "Signup" },
+  { path: href("/dashboard"), label: "Dashboard" },
+  { path: href("/dashboard/calendar"), label: "Calendar" },
+  {
+    path: href("/dashboard/calendar/:day", { day: "1" }),
+    label: "Calendar Day 1",
+  },
+  {
+    path: href("/dashboard/projects/:projectId", { projectId: "1" }),
+    label: "Project 1",
+  },
+  {
+    path: href("/dashboard/projects/:projectId/collaborators", {
+      projectId: "1",
+    }),
+    label: "Project 1 Collaborators",
+  },
+  {
+    path: href("/dashboard/projects/:projectId/edit", { projectId: "1" }),
+    label: "Edit Project 1",
+  },
+  {
+    path: href("/dashboard/projects/:projectId/settings", { projectId: "1" }),
+    label: "Project 1 Settings",
+  },
+  {
+    path: href("/dashboard/projects/:projectId/tasks/:taskId", {
+      projectId: "1",
+      taskId: "1",
+    }),
+    label: "Project 1 Task 1",
+  },
+  { path: href("/dashboard/projects/new"), label: "New Project" },
+  {
+    path: href("/dashboard/projects/:projectId/print", { projectId: "1" }),
+    label: "Print Project 1",
   },
 ];
 

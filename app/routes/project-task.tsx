@@ -1,7 +1,6 @@
-import { useParams } from "react-router";
+import type { Route } from "./+types/project-task";
 
-export default function Page() {
-  const params = useParams();
+export default function Page({ params }: Route.ComponentProps) {
   return (
     <h3>
       Project {params.projectId} task {params.taskId}

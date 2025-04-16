@@ -1,6 +1,5 @@
-import { useParams } from "react-router";
+import type { Route } from "./+types/project-edit";
 
-export default function Page() {
-  const params = useParams();
+export default function Page({ params }: Route.ComponentProps) {
   return <h3>Edit project {params.projectId}</h3>;
 }
