@@ -1,0 +1,47 @@
+app/
+├── (marketing)/                 # Route group for marketing pages
+│   ├── about/
+│   │   ├── page.tsx             # Main about page
+│   │   ├── loading.tsx          # Loading state while data fetches
+│   │   └── error.tsx            # Error boundary for this segment
+│   ├── blog/
+│   │   ├── [slug]/
+│   │   │   ├── page.tsx         # Dynamic blog post page
+│   │   │   └── not-found.tsx    # Custom 404 for invalid slugs
+│   │   └── page.tsx
+│   └── layout.tsx               # Shared layout for marketing pages
+├── (app)/                       # Route group for authenticated app
+│   ├── dashboard/
+│   │   ├── layout.tsx           # Dashboard layout with sidebar
+│   │   ├── loading.tsx          # Loading state for dashboard
+│   │   ├── error.tsx            # Error boundary for dashboard
+│   │   └── page.tsx
+│   ├── settings/
+│   │   ├── layout.tsx           # Settings layout
+│   │   ├── page.tsx
+│   │   └── profile/
+│   │       ├── page.tsx
+│   │       └── loading.tsx
+│   └── layout.tsx               # App-wide authenticated layout
+├── @modal/                      # Parallel route for modals
+│   ├── (.)dashboard/            # Intercepted route for dashboard modals
+│   │   └── projects/
+│   │       └── [id]/
+│   │           └── page.tsx     # Modal for project details
+│   └── layout.tsx               # Modal layout
+├── @sidebar/                    # Parallel route for sidebar
+│   └── default.tsx              # Default sidebar component
+├── api/                         # API routes directory
+│   ├── webhooks/
+│   │   └── route.ts             # Webhook handler
+│   └── users/
+│       └── route.ts             # Users API endpoint
+├── docs/                        # Example of catch-all routes
+│   ├── [...slug]/
+│   │   └── page.tsx             # Catch-all route for docs pages
+│   └── page.tsx                 # Docs landing page
+├── layout.tsx                   # Root layout
+├── loading.tsx                  # Root loading state
+├── not-found.tsx                # Global 404 page
+├── page.tsx                     # Home page
+└── template.tsx                 # Root template (re-renders on navigation) 

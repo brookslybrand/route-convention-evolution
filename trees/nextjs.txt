@@ -1,0 +1,50 @@
+app/
+├── (auth)/
+│   ├── login/
+│   │   └── page.tsx
+│   ├── logout/
+│   │   └── page.tsx
+│   ├── signup/
+│   │   └── page.tsx
+│   └── layout.tsx
+├── (public)/
+│   ├── about-us/
+│   │   └── page.tsx
+│   ├── contact/
+│   │   └── page.tsx
+│   ├── page.tsx
+│   └── layout.tsx
+├── dashboard/
+│   ├── calendar/
+│   │   ├── [day]/
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── projects/
+│   │   ├── [projectId]/
+│   │   │   ├── collaborators/
+│   │   │   │   └── page.tsx
+│   │   │   ├── edit/
+│   │   │   │   └── page.tsx
+│   │   │   ├── page.tsx
+│   │   │   ├── settings/
+│   │   │   │   └── page.tsx
+│   │   │   └── tasks/
+│   │   │       └── [taskId]/
+│   │   │           └── page.tsx
+│   │   ├── [projectId]/
+│   │   │   └── page.tsx
+│   │   ├── new/
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── calendar/
+│   │   └── page.tsx
+│   ├── page.tsx
+│   ├── projects/
+│   │   └── page.tsx
+│   └── layout.tsx
+├── dashboard/
+│   └── projects/
+│       └── [projectId]/
+│           └── print/
+│               └── page.tsx
+└── layout.tsx 
