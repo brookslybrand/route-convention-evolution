@@ -1,31 +1,27 @@
 import type { RouteConfig } from "@react-router/dev/routes";
-import { route, layout, index } from "@react-router/dev/routes";
+import { route, layout, index, prefix } from "@react-router/dev/routes";
+import authRoutes from "./auth/routes";
+import dashboardRoutes from "./dashboard/routes";
+import { createCrud } from "./utils/crud";
 
-export default [
-  layout("layouts/auth.tsx", [
-    route("login", "routes/login.tsx"),
-    route("logout", "routes/logout.tsx"),
-    route("signup", "routes/signup.tsx"),
-  ]),
-  layout("layouts/public.tsx", [
-    index("routes/home.tsx"),
-    route("about-us", "routes/about-us.tsx"),
-    route("contact", "routes/contact.tsx"),
-  ]),
-  route("dashboard", "routes/dashboard-home.tsx"),
-  route("dashboard/calendar", "layouts/calendar.tsx", [
-    index("routes/calendar.tsx"),
-    route(":day", "routes/calendar-day.tsx"),
-  ]),
-  route("dashboard/projects", "layouts/projects.tsx", [
-    route(":projectId", "layouts/project-details.tsx", [
-      index("routes/project-details.tsx"),
-      route("collaborators", "routes/project-collaborators.tsx"),
-      route("edit", "routes/project-edit.tsx"),
-      route("settings", "routes/project-settings.tsx"),
-      route("tasks/:taskId", "routes/project-task.tsx"),
+const crud = createCrud();
+
+let routes = [
+  layout(
+    "layouts/public.tsx",
+    prefix(":lang?", [
+      index("pages/home.tsx"),
+      route("about-us", "pages/about-us.tsx"),
+      route("contact", "pages/contact.tsx"),
     ]),
-    route("new", "routes/project-new.tsx"),
-  ]),
-  route("dashboard/projects/:projectId/print", "routes/project-print.tsx"),
+  ),
+  ...authRoutes,
+  ...dashboardRoutes,
+  crud("users"),
 ] satisfies RouteConfig;
+
+if (process.env.NODE_ENV === "development") {
+  routes.push(route("components", "components/page.tsx"));
+}
+
+export default routes satisfies RouteConfig;

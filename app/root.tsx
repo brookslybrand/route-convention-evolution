@@ -26,9 +26,9 @@ export let links: Route.LinksFunction = () => [
 ];
 
 const urls = [
-  { path: href("/"), label: "Home" },
-  { path: href("/about-us"), label: "About Us" },
-  { path: href("/contact"), label: "Contact" },
+  { path: href("/:lang?"), label: "Home" },
+  { path: href("/:lang?/about-us"), label: "About Us" },
+  { path: href("/:lang?/contact"), label: "Contact" },
   { path: href("/login"), label: "Login" },
   { path: href("/logout"), label: "Logout" },
   { path: href("/signup"), label: "Signup" },
