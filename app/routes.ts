@@ -2,6 +2,9 @@ import type { RouteConfig } from "@react-router/dev/routes";
 import { route, layout, index, prefix } from "@react-router/dev/routes";
 import authRoutes from "./auth/routes";
 import dashboardRoutes from "./dashboard/routes";
+import { createCrud } from "./utils/crud";
+
+let crud = createCrud();
 
 let routes = [
   layout(
@@ -14,6 +17,7 @@ let routes = [
   ),
   ...authRoutes,
   ...dashboardRoutes,
+  crud("user"),
 ] satisfies RouteConfig;
 
 if (process.env.NODE_ENV === "development") {
