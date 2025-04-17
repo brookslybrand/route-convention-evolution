@@ -1,8 +1,6 @@
-import { flatRoutes } from "@react-router/fs-routes";
 import type { RouteConfig } from "@react-router/dev/routes";
+import { flatRoutes } from "@react-router/fs-routes";
 
-let authRoutes = await flatRoutes({
+export default (await flatRoutes({
   rootDirectory: "auth/routes",
-});
-
-export default authRoutes satisfies RouteConfig;
+})) satisfies RouteConfig;

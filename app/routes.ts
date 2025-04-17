@@ -8,7 +8,7 @@ let routes = [
     route("about-us", "pages/about-us.tsx"),
     route("contact", "pages/contact.tsx"),
   ]),
-  // ...(await authRoutes),
+  ...authRoutes,
   route("dashboard", "dashboard/pages/dashboard-home.tsx"),
   route("dashboard/calendar", "dashboard/layouts/calendar.tsx", [
     index("dashboard/pages/calendar.tsx"),
