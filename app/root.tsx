@@ -10,25 +10,10 @@ import {
 
 import "./tailwind.css";
 
-import type { Route } from "./+types/root";
-
-export let links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
-];
-
 const urls = [
-  { path: href("/:lang?"), label: "Home" },
-  { path: href("/:lang?/about-us"), label: "About Us" },
-  { path: href("/:lang?/contact"), label: "Contact" },
+  { path: href("/"), label: "Home" },
+  { path: href("/about-us"), label: "About Us" },
+  { path: href("/contact"), label: "Contact" },
   { path: href("/login"), label: "Login" },
   { path: href("/logout"), label: "Logout" },
   { path: href("/signup"), label: "Signup" },
