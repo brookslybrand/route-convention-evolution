@@ -13,4 +13,8 @@ let routes = [
   ...dashboardRoutes,
 ] satisfies RouteConfig;
 
+if (process.env.NODE_ENV === "development") {
+  routes.push(route("components", "components/page.tsx"));
+}
+
 export default routes;
